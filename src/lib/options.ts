@@ -1,5 +1,7 @@
 /** Option keys for every chip/select. Labels live in messages/*.json under `options.*`. */
 
+export const CUSTOMER_TYPES = ["company", "personal"] as const;
+
 export const FLEET_SIZES = ["1-4", "5-19", "20-49", "50-99", "100-249", "250+"] as const;
 export type FleetSize = (typeof FLEET_SIZES)[number];
 

@@ -23,7 +23,7 @@ constVar("C - Meta Pixel ID", "000000000000000");
 constVar("C - Google Ads ID", "AW-000000000");
 constVar("C - Google Ads Lead Label", "XXXXXXXXXXXXXXXX");
 constVar("C - Google Ads Contact Label", "YYYYYYYYYYYYYYYY");
-for (const k of ["event_id", "lead_tier", "fleet_size", "lead_intent", "ab_variant", "locale", "value", "currency", "location", "cta_id", "step_number", "field", "percent", "to_locale", "last_step", "vehicles", "fuel_type", "est_spend", "est_saving", "page_type"]) dlv(`DLV - ${k}`, k);
+for (const k of ["event_id", "lead_tier", "fleet_size", "lead_intent", "ab_variant", "locale", "value", "currency", "location", "cta_id", "step_number", "field", "percent", "to_locale", "last_step", "vehicles", "fuel_type", "est_spend", "est_saving", "page_type", "customer_type"]) dlv(`DLV - ${k}`, k);
 dlv("DLV - user_data.email", "user_data.email");
 dlv("DLV - user_data.phone_number", "user_data.phone_number");
 variables.push({
@@ -38,7 +38,7 @@ const ce = (event) => {
   triggers[event] = t;
   return t.triggerId;
 };
-const EVENTS = ["page_view", "scroll_depth", "cta_click", "fleet_size_selected", "calculator_used", "calculator_completed", "form_start", "form_step_complete", "form_error", "form_abandon", "generate_lead", "whatsapp_click", "phone_click", "demo_booked", "lang_switch", "exit_intent_shown"];
+const EVENTS = ["customer_type_selected", "disqualified_personal", "page_view", "scroll_depth", "cta_click", "fleet_size_selected", "calculator_used", "calculator_completed", "form_start", "form_step_complete", "form_error", "form_abandon", "generate_lead", "whatsapp_click", "phone_click", "demo_booked", "lang_switch", "exit_intent_shown"];
 EVENTS.forEach(ce);
 const initTrigger = { ...base(), triggerId: nextId(), name: "Init - All Pages", type: "INIT" };
 
@@ -54,6 +54,8 @@ tags.push({
 
 const GA4_PARAMS = {
   page_view: ["locale", "ab_variant", "page_type"],
+  customer_type_selected: ["customer_type"],
+  disqualified_personal: ["lead_intent"],
   scroll_depth: ["percent"],
   cta_click: ["cta_id", "location"],
   fleet_size_selected: ["fleet_size"],

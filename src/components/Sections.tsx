@@ -417,23 +417,28 @@ export async function FinalCta({ variant }: { variant: string }) {
   const th = await getTranslations("hero");
   const tw = await getTranslations("wa");
   return (
-    <section className="section bg-brand" data-section="final_cta">
-      <div className="container-x grid items-center gap-8 lg:grid-cols-2">
-        <div className="text-white">
-          <h2 className="text-3xl font-bold sm:text-4xl">{t("title")}</h2>
-          <p className="mt-3 text-lg text-white/90">{t("sub")}</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a href={whatsappLink(tw("default"))} target="_blank" rel="noopener" data-loc="final_cta" className="btn bg-white text-wa">
-              <WhatsAppIcon className="size-5" />
-              {th("whatsapp")}
-            </a>
-            <a href={`tel:${site.contact.salesPhoneE164}`} data-loc="final_cta" className="btn border-2 border-white text-white">
-              <PhoneIcon className="size-5" />
-              {th("call")}
-            </a>
-          </div>
+    <section id="lead-section" className="section bg-brand-50" data-section="final_cta" aria-labelledby="lead-section-title">
+      <div className="container-x max-w-2xl">
+        <div className="text-center">
+          <p className="inline-flex rounded-full bg-white px-3 py-1 text-sm font-semibold text-brand ring-1 ring-brand-100">{t("eyebrow")}</p>
+          <h2 id="lead-section-title" className="section-title mt-3">
+            {t("title")}
+          </h2>
+          <p className="mt-2 text-muted sm:text-lg">{t("sub")}</p>
         </div>
-        <MultiStepForm intent="final_cta" variant={variant} />
+        <div className="mt-8">
+          <MultiStepForm intent="final_cta" variant={variant} />
+        </div>
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <a href={whatsappLink(tw("default"))} target="_blank" rel="noopener" data-loc="final_cta" className="btn btn-wa flex-1 sm:flex-none">
+            <WhatsAppIcon className="size-5" />
+            {th("whatsapp")}
+          </a>
+          <a href={`tel:${site.contact.salesPhoneE164}`} data-loc="final_cta" className="btn btn-ghost flex-1 sm:flex-none">
+            <PhoneIcon className="size-5" />
+            {th("call")}
+          </a>
+        </div>
       </div>
     </section>
   );

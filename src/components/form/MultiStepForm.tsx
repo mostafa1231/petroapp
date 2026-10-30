@@ -9,6 +9,7 @@ import { site } from "@config/site";
 import { draftStore, useDraft } from "@/lib/draft-store";
 import {
   CURRENT_METHODS,
+  CUSTOMER_TYPES,
   FLEET_SIZES,
   GOVERNORATES,
   INDUSTRIES,
@@ -27,7 +28,7 @@ import { LAST_LEAD_KEY, QUEUE_KEY } from "@/lib/keys";
 import { ChipGroup } from "./ChipGroup";
 import { Turnstile } from "./Turnstile";
 
-const TOTAL = 4;
+const TOTAL = 5;
 const DEFAULTS: Partial<LeadFormValues> = {
   vehicle_types: [],
   whatsapp_same: true,
@@ -174,12 +175,29 @@ export function MultiStepForm({
     markStarted();
     setValue("fleet_size", v as LeadFormValues["fleet_size"], { shouldValidate: true });
     track("fleet_size_selected", { fleet_size: v });
+    track("form_step_complete", { step_number: 2 });
+    draftStore.setStep(2, uid);
+  }
+
+  function onCustomerTypePicked(v: string) {
+    markStarted();
+    setValue("customer_type", v as never, { shouldValidate: false });
+    track("customer_type_selected", { customer_type: v });
+    if (v === "personal") {
+      track("disqualified_personal", { lead_intent: draftStore.get().intent });
+      return; // stays on step 0; the stop panel replaces the question
+    }
     track("form_step_complete", { step_number: 1 });
     draftStore.setStep(1, uid);
   }
 
+  function resetCustomerType() {
+    setValue("customer_type", undefined as never);
+    draftStore.setStep(0, uid);
+  }
+
   async function onSubmit() {
-    // The step resolver only covers step 4; validate everything collected so far.
+    // The step resolver only covers the last step; validate everything collected so far.
     const values = getValues();
     const full = leadFormSchema.safeParse(values);
     if (!full.success) {
@@ -251,6 +269,7 @@ export function MultiStepForm({
 
   const errMsg = (key?: string) => (key ? (te.has(key) ? te(key) : te("required")) : undefined);
   const fleet = watch("fleet_size");
+  const customerType = watch("customer_type") as string | undefined;
   const whatsappSame = watch("whatsapp_same");
   const waHref = whatsappLink(fleet ? tw("withFleet", { fleet: to(`fleet_size.${fleet}`) }) : tw("default"));
 
@@ -289,7 +308,45 @@ export function MultiStepForm({
         </div>
 
         <div key={step} className="step-enter space-y-5">
-          {step === 0 && (
+          {step === 0 && customerType !== "personal" && (
+            <>
+              <h2 ref={headingRef} tabIndex={-1} data-step-heading className="text-xl font-bold outline-none sm:text-2xl">
+                {tl("customer_type")}
+              </h2>
+              <Controller
+                control={control}
+                name="customer_type"
+                render={({ field }) => (
+                  <ChipGroup
+                    id={`${uid}-ctype`}
+                    name="customer_type"
+                    label={tl("customer_type")}
+                    hideLabel
+                    options={CUSTOMER_TYPES}
+                    labels={(o) => to(`customer_type.${o}`)}
+                    value={field.value as (typeof CUSTOMER_TYPES)[number] | undefined}
+                    onChange={(v) => onCustomerTypePicked(v as string)}
+                    columns={2}
+                    error={errMsg(errors.customer_type?.message)}
+                  />
+                )}
+              />
+            </>
+          )}
+
+          {step === 0 && customerType === "personal" && (
+            <div role="status" data-testid="personal-stop" className="space-y-3 text-center">
+              <h2 ref={headingRef} tabIndex={-1} data-step-heading className="text-xl font-bold outline-none">
+                {t("personal.title")}
+              </h2>
+              <p className="text-muted">{t("personal.body")}</p>
+              <button type="button" onClick={resetCustomerType} className="btn btn-ghost w-full">
+                {t("personal.back")}
+              </button>
+            </div>
+          )}
+
+          {step === 1 && (
             <>
               <h2 ref={headingRef} tabIndex={-1} data-step-heading className="text-xl font-bold outline-none sm:text-2xl">
                 {t("title")}
@@ -316,10 +373,10 @@ export function MultiStepForm({
             </>
           )}
 
-          {step === 1 && (
+          {step === 2 && (
             <>
               <h2 ref={headingRef} tabIndex={-1} data-step-heading className="sr-only">
-                {t("stepOf", { step: 2, total: TOTAL })}
+                {t("stepOf", { step: 3, total: TOTAL })}
               </h2>
               <Controller
                 control={control}
@@ -402,10 +459,10 @@ export function MultiStepForm({
             </>
           )}
 
-          {step === 2 && (
+          {step === 3 && (
             <>
               <h2 ref={headingRef} tabIndex={-1} data-step-heading className="sr-only">
-                {t("stepOf", { step: 3, total: TOTAL })}
+                {t("stepOf", { step: 4, total: TOTAL })}
               </h2>
               <TextField
                 id={`${uid}-company`}
@@ -448,10 +505,10 @@ export function MultiStepForm({
             </>
           )}
 
-          {step === 3 && (
+          {step === 4 && (
             <>
               <h2 ref={headingRef} tabIndex={-1} data-step-heading className="sr-only">
-                {t("stepOf", { step: 4, total: TOTAL })}
+                {t("stepOf", { step: 5, total: TOTAL })}
               </h2>
               <TextField
                 id={`${uid}-name`}
@@ -552,12 +609,12 @@ export function MultiStepForm({
                   <span>{tl("consent_marketing")}</span>
                 </label>
               </div>
-              <Turnstile active={step === 3} onToken={(tok) => (turnstileToken.current = tok)} />
+              <Turnstile active={step === 4} onToken={(tok) => (turnstileToken.current = tok)} />
             </>
           )}
         </div>
 
-        {step > 0 && (
+        {step > 1 && (
           <div className="mt-6">
             {step < TOTAL - 1 ? (
               <button type="button" onClick={next} className="btn btn-primary w-full text-lg">

@@ -4,6 +4,7 @@ import { buildLeadRecord } from "@/lib/lead";
 import { mapToCrm } from "../../config/crm-map";
 
 export const validLead = {
+  customer_type: "company",
   fleet_size: "20-49",
   vehicle_types: ["van"],
   monthly_fuel_spend: "50k-200k",
@@ -32,6 +33,11 @@ describe("lead schema", () => {
     expect(msgs.mobile).toBe("mobile_invalid");
     expect(msgs.consent_processing).toBe("consent_required");
     expect(msgs.email).toBe("email_invalid");
+  });
+  it("rejects personal use with company_only", () => {
+    const r = leadFormSchema.safeParse({ ...validLead, customer_type: "personal" });
+    expect(r.success).toBe(false);
+    expect(r.error!.issues[0].message).toBe("company_only");
   });
   it("requires a WhatsApp number when different from mobile", () => {
     const r = leadFormSchema.safeParse({ ...validLead, whatsapp_same: false, whatsapp_number: "" });

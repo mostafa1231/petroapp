@@ -63,10 +63,10 @@ export function Calculator() {
     touched();
     const v = num(vehicles);
     draftStore.prefill(
-      { fleet_size: fleetSizeFromCount(Math.max(1, v)), monthly_fuel_spend: spendBandFromEgp(result.monthlySpend) },
+      { customer_type: "company", fleet_size: fleetSizeFromCount(Math.max(1, v)), monthly_fuel_spend: spendBandFromEgp(result.monthlySpend) },
       {
         intent: "calculator",
-        step: 1,
+        step: 2,
         calc: { vehicles: v, fuel_type: fuel, litres: num(litres), waste_pct: waste, est_spend: result.monthlySpend, est_saving: result.yearlySaving },
       },
     );

@@ -13,7 +13,7 @@ export function OpenFormButton({ intent, cta, className, children }: { intent: L
       className={className}
       onClick={() => {
         const d = draftStore.get();
-        draftStore.prefill({}, { intent, step: d.values.fleet_size ? Math.max(d.step, 1) : 0 });
+        draftStore.prefill({}, { intent, step: d.values.customer_type === "company" && d.values.fleet_size ? Math.max(d.step, 2) : 0 });
         openLeadForm();
       }}
     >

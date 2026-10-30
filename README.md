@@ -69,7 +69,8 @@ Run one test at a time (roadmap in the brief §10). The primary metric is qualif
 
 ```
 Hero chip / calculator / pricing CTA
-  └─ 4-step form (draft shared across both form instances via sessionStorage)
+  └─ Q1 «شركة أو استخدام شخصي؟» → personal: polite stop, no data sent
+  └─ 5-step form in the hero + dedicated form section at the end (draft shared via sessionStorage)
        └─ POST /api/lead  { lead, meta: event_id, attribution, consent, calculator, … }
             ├─ Zod validation (same schema as the client) + libphonenumber check
             ├─ honeypot, ≥3 s time-to-submit, Turnstile, IP rate limit (5/10 min)
@@ -122,7 +123,9 @@ All browser events go to `dataLayer` and are mapped in GTM. Import `gtm/gtm-cont
 | `page_view` | load (locale, ab_variant) | PageView |
 | `scroll_depth` | 25/50/75/90% | – |
 | `cta_click` | any `[data-cta]` | – |
-| `fleet_size_selected` | hero chip | custom `FleetSizeSelected` |
+| `customer_type_selected` | qualifier answer (company / personal) | – |
+| `disqualified_personal` | visitor picked "personal use" — form stops, nothing is sent | – |
+| `fleet_size_selected` | fleet-size chip | custom `FleetSizeSelected` |
 | `calculator_used` / `calculator_completed` | first input / result on screen | custom |
 | `form_start`, `form_step_complete`, `form_error`, `form_abandon` | form lifecycle | – |
 | `generate_lead` | thank-you page, **once per event_id** | **Lead** (Pixel + CAPI, same `event_id`) |

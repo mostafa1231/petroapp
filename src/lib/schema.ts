@@ -24,6 +24,11 @@ const nameRe = /^[\p{L}\p{M}\s.'&\-()0-9]+$/u;
 const minTrim = (n: number, msg: string) => z.refine<string>((v) => v.trim().length >= n, msg);
 const emptyOr = <T extends z.ZodMiniType>(s: T) => z.optional(z.union([s, z.literal("")]));
 
+/** Qualifier: only companies continue; "personal" is stopped client-side and rejected here. */
+const step0Shape = {
+  customer_type: z.literal("company", { error: "company_only" }),
+};
+
 const step1Shape = {
   fleet_size: z.enum(FLEET_SIZES, required),
 };
@@ -62,17 +67,19 @@ const whatsappCheck = z.refine<{ whatsapp_same?: boolean; whatsapp_number?: stri
   { error: "mobile_invalid", path: ["whatsapp_number"] },
 );
 
+export const step0Schema = z.object(step0Shape);
 export const step1Schema = z.object(step1Shape);
 export const step2Schema = z.object(step2Shape);
 export const step3Schema = z.object(step3Shape);
 export const step4Schema = z.object(step4Shape).check(whatsappCheck);
 
-export const leadFormSchema = z.object({ ...step1Shape, ...step2Shape, ...step3Shape, ...step4Shape }).check(whatsappCheck);
+export const leadFormSchema = z.object({ ...step0Shape, ...step1Shape, ...step2Shape, ...step3Shape, ...step4Shape }).check(whatsappCheck);
 
 export type LeadFormValues = z.input<typeof leadFormSchema>;
 export type LeadFormOutput = z.output<typeof leadFormSchema>;
 
 export const STEP_FIELDS = [
+  ["customer_type"],
   ["fleet_size"],
   ["vehicle_types", "monthly_fuel_spend", "current_method", "governorate"],
   ["company_name", "job_role", "industry"],
@@ -88,7 +95,7 @@ export const STEP_FIELDS = [
   ],
 ] as const satisfies readonly (readonly (keyof LeadFormValues)[])[];
 
-export const STEP_SCHEMAS = [step1Schema, step2Schema, step3Schema, step4Schema] as const;
+export const STEP_SCHEMAS = [step0Schema, step1Schema, step2Schema, step3Schema, step4Schema] as const;
 
 const str = (max = 500) => z.optional(z.string().check(z.maxLength(max)));
 const granted = z.enum(["granted", "denied"]);

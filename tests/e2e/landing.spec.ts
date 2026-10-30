@@ -3,8 +3,9 @@ import { expect, test, type Page } from "@playwright/test";
 /** Waits so the server-side minimum time-to-submit (3 s) is satisfied. */
 async function fillLead(page: Page, opts: { mobile: string; ar: boolean }) {
   const form = page.locator("#lead-form");
+  await form.getByRole("radio", { name: opts.ar ? "شركة" : "Company" }).click();
   await form.getByRole("radio", { name: "20–49" }).click();
-  await expect(form.locator("[aria-live=polite]")).toHaveText(opts.ar ? "خطوة 2 من 4" : "Step 2 of 4");
+  await expect(form.locator("[aria-live=polite]")).toHaveText(opts.ar ? "خطوة 3 من 5" : "Step 3 of 5");
   await form.getByRole("radio", { name: opts.ar ? "50–200 ألف" : "50k–200k" }).click();
   await form.getByRole("radio", { name: opts.ar ? "كاش/عهدة" : "Cash/advances" }).click();
   await form.locator("select").first().selectOption("cairo");
@@ -24,7 +25,7 @@ test.describe("Arabic (default)", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "ar");
     await expect(page.getByTestId("hero-h1")).toBeVisible();
     // Step 1 chips are above the fold on mobile.
-    const chip = page.locator("#lead-form").getByRole("radio", { name: "1–4" });
+    const chip = page.locator("#lead-form").getByRole("radio", { name: "استخدام شخصي" });
     await expect(chip).toBeInViewport();
     const cookies = await page.context().cookies();
     expect(cookies.find((c) => c.name === "pa_attr")?.value).toContain("eg_fleet_test");
@@ -71,6 +72,32 @@ test.describe("Arabic (default)", () => {
     expect(await count()).toBe(0); // fresh dataLayer after reload, and the guard prevented re-firing
   });
 
+  test("personal use is stopped and nothing is sent", async ({ page }) => {
+    let posted = false;
+    page.on("request", (r) => {
+      if (r.url().endsWith("/api/lead")) posted = true;
+    });
+    await page.goto("/ar");
+    const form = page.locator("#lead-form");
+    await form.getByRole("radio", { name: "استخدام شخصي" }).click();
+    await expect(form.getByTestId("personal-stop")).toContainText("للشركات والأساطيل");
+    await expect(form.getByRole("radio", { name: "1–4" })).toHaveCount(0);
+    expect(await page.evaluate(() => (window.dataLayer as { event?: string }[]).some((e) => e.event === "disqualified_personal"))).toBe(true);
+    await form.getByRole("button", { name: "رجوع وتغيير الإجابة" }).click();
+    await form.getByRole("radio", { name: "شركة" }).click();
+    await expect(form.getByRole("radio", { name: "1–4" })).toBeVisible();
+    expect(posted).toBe(false);
+  });
+
+  test("dedicated form section at the end works too", async ({ page }) => {
+    await page.goto("/ar");
+    const section = page.locator("#lead-section");
+    await section.scrollIntoViewIfNeeded();
+    await expect(section.getByRole("heading", { name: "جاهز توقف الهدر؟" })).toBeVisible();
+    await section.getByRole("radio", { name: "شركة" }).click();
+    await expect(section.getByRole("radio", { name: "1–4" })).toBeVisible();
+  });
+
   test("thank-you without a valid token redirects to landing", async ({ page }) => {
     await page.goto("/ar/thank-you?t=forged.token");
     await expect(page).toHaveURL(/\/ar$/);
@@ -81,7 +108,7 @@ test.describe("Arabic (default)", () => {
     await page.locator("#calc-vehicles").fill("60");
     await page.getByTestId("calc-cta").click();
     const form = page.locator("#lead-form");
-    await expect(form.locator("[aria-live=polite]")).toHaveText("خطوة 2 من 4");
+    await expect(form.locator("[aria-live=polite]")).toHaveText("خطوة 3 من 5");
     await expect(form.getByRole("radio", { name: "200 ألف–1 مليون" })).toHaveAttribute("aria-checked", "true");
   });
 });

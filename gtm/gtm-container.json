@@ -1,6 +1,6 @@
 {
   "exportFormatVersion": 2,
-  "exportTime": "2026-10-30 20:37:51",
+  "exportTime": "2026-10-30 22:17:54",
   "containerVersion": {
     "accountId": "0",
     "containerId": "0",
@@ -18,7 +18,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "46",
+        "tagId": "49",
         "name": "GA4 - Config",
         "type": "googtag",
         "parameter": [
@@ -50,7 +50,7 @@
           }
         ],
         "firingTriggerId": [
-          "45"
+          "48"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -68,7 +68,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "47",
+        "tagId": "50",
         "name": "GA4 - page_view",
         "type": "gaawe",
         "parameter": [
@@ -135,7 +135,7 @@
           }
         ],
         "firingTriggerId": [
-          "29"
+          "32"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -153,7 +153,117 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "48",
+        "tagId": "51",
+        "name": "GA4 - customer_type_selected",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "customer_type_selected"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{C - GA4 Measurement ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventSettingsTable",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "customer_type"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - customer_type}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "30"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "analytics_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "52",
+        "name": "GA4 - disqualified_personal",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "disqualified_personal"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{C - GA4 Measurement ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventSettingsTable",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "lead_intent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - lead_intent}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "31"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "analytics_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "53",
         "name": "GA4 - scroll_depth",
         "type": "gaawe",
         "parameter": [
@@ -190,7 +300,7 @@
           }
         ],
         "firingTriggerId": [
-          "30"
+          "33"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -208,7 +318,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "49",
+        "tagId": "54",
         "name": "GA4 - cta_click",
         "type": "gaawe",
         "parameter": [
@@ -260,7 +370,7 @@
           }
         ],
         "firingTriggerId": [
-          "31"
+          "34"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -278,7 +388,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "50",
+        "tagId": "55",
         "name": "GA4 - fleet_size_selected",
         "type": "gaawe",
         "parameter": [
@@ -315,7 +425,7 @@
           }
         ],
         "firingTriggerId": [
-          "32"
+          "35"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -333,7 +443,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "51",
+        "tagId": "56",
         "name": "GA4 - calculator_used",
         "type": "gaawe",
         "parameter": [
@@ -385,7 +495,7 @@
           }
         ],
         "firingTriggerId": [
-          "33"
+          "36"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -403,7 +513,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "52",
+        "tagId": "57",
         "name": "GA4 - calculator_completed",
         "type": "gaawe",
         "parameter": [
@@ -485,7 +595,7 @@
           }
         ],
         "firingTriggerId": [
-          "34"
+          "37"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -503,7 +613,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "53",
+        "tagId": "58",
         "name": "GA4 - form_start",
         "type": "gaawe",
         "parameter": [
@@ -540,7 +650,7 @@
           }
         ],
         "firingTriggerId": [
-          "35"
+          "38"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -558,7 +668,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "54",
+        "tagId": "59",
         "name": "GA4 - form_step_complete",
         "type": "gaawe",
         "parameter": [
@@ -595,7 +705,7 @@
           }
         ],
         "firingTriggerId": [
-          "36"
+          "39"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -613,7 +723,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "55",
+        "tagId": "60",
         "name": "GA4 - form_error",
         "type": "gaawe",
         "parameter": [
@@ -665,7 +775,7 @@
           }
         ],
         "firingTriggerId": [
-          "37"
+          "40"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -683,7 +793,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "56",
+        "tagId": "61",
         "name": "GA4 - form_abandon",
         "type": "gaawe",
         "parameter": [
@@ -735,7 +845,7 @@
           }
         ],
         "firingTriggerId": [
-          "38"
+          "41"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -753,7 +863,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "57",
+        "tagId": "62",
         "name": "GA4 - generate_lead",
         "type": "gaawe",
         "parameter": [
@@ -880,7 +990,7 @@
           }
         ],
         "firingTriggerId": [
-          "39"
+          "42"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -898,7 +1008,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "58",
+        "tagId": "63",
         "name": "GA4 - whatsapp_click",
         "type": "gaawe",
         "parameter": [
@@ -935,7 +1045,7 @@
           }
         ],
         "firingTriggerId": [
-          "40"
+          "43"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -953,7 +1063,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "59",
+        "tagId": "64",
         "name": "GA4 - phone_click",
         "type": "gaawe",
         "parameter": [
@@ -990,7 +1100,7 @@
           }
         ],
         "firingTriggerId": [
-          "41"
+          "44"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1008,7 +1118,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "60",
+        "tagId": "65",
         "name": "GA4 - demo_booked",
         "type": "gaawe",
         "parameter": [
@@ -1045,7 +1155,7 @@
           }
         ],
         "firingTriggerId": [
-          "42"
+          "45"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1063,7 +1173,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "61",
+        "tagId": "66",
         "name": "GA4 - lang_switch",
         "type": "gaawe",
         "parameter": [
@@ -1100,7 +1210,7 @@
           }
         ],
         "firingTriggerId": [
-          "43"
+          "46"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1118,7 +1228,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "62",
+        "tagId": "67",
         "name": "GA4 - exit_intent_shown",
         "type": "gaawe",
         "parameter": [
@@ -1139,7 +1249,7 @@
           }
         ],
         "firingTriggerId": [
-          "44"
+          "47"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1157,7 +1267,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "63",
+        "tagId": "68",
         "name": "Meta - Base + PageView",
         "type": "html",
         "parameter": [
@@ -1165,176 +1275,6 @@
             "type": "TEMPLATE",
             "key": "html",
             "value": "<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');\nfbq('init','{{C - Meta Pixel ID}}');fbq('track','PageView');\n</script>"
-          },
-          {
-            "type": "BOOLEAN",
-            "key": "supportDocumentWrite",
-            "value": "false"
-          }
-        ],
-        "firingTriggerId": [
-          "29"
-        ],
-        "consentSettings": {
-          "consentStatus": "NEEDED",
-          "consentType": {
-            "type": "LIST",
-            "list": [
-              {
-                "type": "TEMPLATE",
-                "value": "ad_storage"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "accountId": "0",
-        "containerId": "0",
-        "tagId": "64",
-        "name": "Meta - Lead",
-        "type": "html",
-        "parameter": [
-          {
-            "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.fbq&&fbq('track','Lead',{value:{{DLV - value}},currency:'EGP',lead_tier:'{{DLV - lead_tier}}'},{eventID:'{{DLV - event_id}}'});</script>"
-          },
-          {
-            "type": "BOOLEAN",
-            "key": "supportDocumentWrite",
-            "value": "false"
-          }
-        ],
-        "firingTriggerId": [
-          "39"
-        ],
-        "consentSettings": {
-          "consentStatus": "NEEDED",
-          "consentType": {
-            "type": "LIST",
-            "list": [
-              {
-                "type": "TEMPLATE",
-                "value": "ad_storage"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "accountId": "0",
-        "containerId": "0",
-        "tagId": "65",
-        "name": "Meta - Contact (WhatsApp)",
-        "type": "html",
-        "parameter": [
-          {
-            "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.fbq&&fbq('track','Contact',{channel:'whatsapp'},{eventID:'{{DLV - event_id}}'});</script>"
-          },
-          {
-            "type": "BOOLEAN",
-            "key": "supportDocumentWrite",
-            "value": "false"
-          }
-        ],
-        "firingTriggerId": [
-          "40"
-        ],
-        "consentSettings": {
-          "consentStatus": "NEEDED",
-          "consentType": {
-            "type": "LIST",
-            "list": [
-              {
-                "type": "TEMPLATE",
-                "value": "ad_storage"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "accountId": "0",
-        "containerId": "0",
-        "tagId": "66",
-        "name": "Meta - Contact (Phone)",
-        "type": "html",
-        "parameter": [
-          {
-            "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.fbq&&fbq('track','Contact',{channel:'phone'},{eventID:'{{DLV - event_id}}'});</script>"
-          },
-          {
-            "type": "BOOLEAN",
-            "key": "supportDocumentWrite",
-            "value": "false"
-          }
-        ],
-        "firingTriggerId": [
-          "41"
-        ],
-        "consentSettings": {
-          "consentStatus": "NEEDED",
-          "consentType": {
-            "type": "LIST",
-            "list": [
-              {
-                "type": "TEMPLATE",
-                "value": "ad_storage"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "accountId": "0",
-        "containerId": "0",
-        "tagId": "67",
-        "name": "Meta - Schedule",
-        "type": "html",
-        "parameter": [
-          {
-            "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.fbq&&fbq('track','Schedule',{},{eventID:'{{DLV - event_id}}'});</script>"
-          },
-          {
-            "type": "BOOLEAN",
-            "key": "supportDocumentWrite",
-            "value": "false"
-          }
-        ],
-        "firingTriggerId": [
-          "42"
-        ],
-        "consentSettings": {
-          "consentStatus": "NEEDED",
-          "consentType": {
-            "type": "LIST",
-            "list": [
-              {
-                "type": "TEMPLATE",
-                "value": "ad_storage"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "accountId": "0",
-        "containerId": "0",
-        "tagId": "68",
-        "name": "Meta - FleetSizeSelected",
-        "type": "html",
-        "parameter": [
-          {
-            "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.fbq&&fbq('trackCustom','FleetSizeSelected',{fleet_size:'{{DLV - fleet_size}}'});</script>"
           },
           {
             "type": "BOOLEAN",
@@ -1362,13 +1302,13 @@
         "accountId": "0",
         "containerId": "0",
         "tagId": "69",
-        "name": "Meta - CalculatorCompleted",
+        "name": "Meta - Lead",
         "type": "html",
         "parameter": [
           {
             "type": "TEMPLATE",
             "key": "html",
-            "value": "<script>window.fbq&&fbq('trackCustom','CalculatorCompleted',{vehicles:{{DLV - vehicles}}});</script>"
+            "value": "<script>window.fbq&&fbq('track','Lead',{value:{{DLV - value}},currency:'EGP',lead_tier:'{{DLV - lead_tier}}'},{eventID:'{{DLV - event_id}}'});</script>"
           },
           {
             "type": "BOOLEAN",
@@ -1377,7 +1317,7 @@
           }
         ],
         "firingTriggerId": [
-          "34"
+          "42"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1396,6 +1336,176 @@
         "accountId": "0",
         "containerId": "0",
         "tagId": "70",
+        "name": "Meta - Contact (WhatsApp)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>window.fbq&&fbq('track','Contact',{channel:'whatsapp'},{eventID:'{{DLV - event_id}}'});</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "43"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "71",
+        "name": "Meta - Contact (Phone)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>window.fbq&&fbq('track','Contact',{channel:'phone'},{eventID:'{{DLV - event_id}}'});</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "44"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "72",
+        "name": "Meta - Schedule",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>window.fbq&&fbq('track','Schedule',{},{eventID:'{{DLV - event_id}}'});</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "45"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "73",
+        "name": "Meta - FleetSizeSelected",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>window.fbq&&fbq('trackCustom','FleetSizeSelected',{fleet_size:'{{DLV - fleet_size}}'});</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "35"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "74",
+        "name": "Meta - CalculatorCompleted",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>window.fbq&&fbq('trackCustom','CalculatorCompleted',{vehicles:{{DLV - vehicles}}});</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "37"
+        ],
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "75",
         "name": "Google Ads - Conversion Linker",
         "type": "gclidw",
         "parameter": [
@@ -1406,13 +1516,13 @@
           }
         ],
         "firingTriggerId": [
-          "45"
+          "48"
         ]
       },
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "71",
+        "tagId": "76",
         "name": "Google Ads - Lead (enhanced conversions)",
         "type": "awct",
         "parameter": [
@@ -1453,7 +1563,7 @@
           }
         ],
         "firingTriggerId": [
-          "39"
+          "42"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1471,7 +1581,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "72",
+        "tagId": "77",
         "name": "Google Ads - Secondary whatsapp_click",
         "type": "awct",
         "parameter": [
@@ -1492,7 +1602,7 @@
           }
         ],
         "firingTriggerId": [
-          "40"
+          "43"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1510,7 +1620,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "73",
+        "tagId": "78",
         "name": "Google Ads - Secondary phone_click",
         "type": "awct",
         "parameter": [
@@ -1531,7 +1641,7 @@
           }
         ],
         "firingTriggerId": [
-          "41"
+          "44"
         ],
         "consentSettings": {
           "consentStatus": "NEEDED",
@@ -1551,14 +1661,62 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "45",
+        "triggerId": "48",
         "name": "Init - All Pages",
         "type": "INIT"
       },
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "29",
+        "triggerId": "30",
+        "name": "CE - customer_type_selected",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "customer_type_selected"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "31",
+        "name": "CE - disqualified_personal",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "disqualified_personal"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "32",
         "name": "CE - page_view",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1582,7 +1740,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "30",
+        "triggerId": "33",
         "name": "CE - scroll_depth",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1606,7 +1764,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "31",
+        "triggerId": "34",
         "name": "CE - cta_click",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1630,7 +1788,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "32",
+        "triggerId": "35",
         "name": "CE - fleet_size_selected",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1654,7 +1812,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "33",
+        "triggerId": "36",
         "name": "CE - calculator_used",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1678,7 +1836,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "34",
+        "triggerId": "37",
         "name": "CE - calculator_completed",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1702,7 +1860,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "35",
+        "triggerId": "38",
         "name": "CE - form_start",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1726,7 +1884,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "36",
+        "triggerId": "39",
         "name": "CE - form_step_complete",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1750,7 +1908,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "37",
+        "triggerId": "40",
         "name": "CE - form_error",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1774,7 +1932,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "38",
+        "triggerId": "41",
         "name": "CE - form_abandon",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1798,7 +1956,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "39",
+        "triggerId": "42",
         "name": "CE - generate_lead",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1822,7 +1980,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "40",
+        "triggerId": "43",
         "name": "CE - whatsapp_click",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1846,7 +2004,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "41",
+        "triggerId": "44",
         "name": "CE - phone_click",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1870,7 +2028,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "42",
+        "triggerId": "45",
         "name": "CE - demo_booked",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1894,7 +2052,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "43",
+        "triggerId": "46",
         "name": "CE - lang_switch",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -1918,7 +2076,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "44",
+        "triggerId": "47",
         "name": "CE - exit_intent_shown",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -2495,6 +2653,30 @@
         "accountId": "0",
         "containerId": "0",
         "variableId": "26",
+        "name": "DLV - customer_type",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "customer_type"
+          },
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "27",
         "name": "DLV - user_data.email",
         "type": "v",
         "parameter": [
@@ -2518,7 +2700,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "27",
+        "variableId": "28",
         "name": "DLV - user_data.phone_number",
         "type": "v",
         "parameter": [
@@ -2542,7 +2724,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "28",
+        "variableId": "29",
         "name": "UPD - Enhanced conversions",
         "type": "awec",
         "parameter": [
