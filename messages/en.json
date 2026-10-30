@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "title": "PetroApp Egypt | Fleet fuel management with NFC",
+    "description": "Save up to 20% of your fleet fuel budget. An NFC chip per vehicle, spending limits per driver, certified e-invoices and {stations}+ stations across every governorate in Egypt.",
+    "ogAlt": "PetroApp Egypt — fleet fuel management"
+  },
+  "header": {
+    "switchTo": "العربية",
+    "switchLabel": "Switch to Arabic",
+    "call": "Call us",
+    "whatsapp": "WhatsApp"
+  },
+  "hero": {
+    "eyebrow": "{stations}+ stations in every governorate · Certified e-invoices",
+    "h1": {
+      "A": "Stop fuel waste in your fleet — and save up to {pct}% of your fuel budget",
+      "B": "Full control of your fleet's fuel spend from one platform"
+    },
+    "sub": "An NFC chip on every vehicle, spending limits for every driver, and no cash at the station. Every litre is logged against the vehicle and the driver.",
+    "whatsapp": "Chat on WhatsApp",
+    "call": "Call us",
+    "trust": "{companies}+ companies · {vehicles}+ vehicles in {countries} countries",
+    "logosLabel": "Egyptian companies using PetroApp",
+    "mock": {
+      "title": "Fleet dashboard",
+      "spend": "Fuel spend this month",
+      "saved": "Saved",
+      "vehicles": "active vehicles",
+      "live": "Live",
+      "tx1": "Diesel · 60 L",
+      "tx2": "Petrol 92 · 40 L",
+      "tx3": "Over-limit fuelling attempt",
+      "blocked": "Blocked"
+    }
+  },
+  "pain": {
+    "title": "Is this happening in your fleet?",
+    "items": [
+      { "title": "Fuel theft and padded receipts", "body": "Litres billed but never put in the tank, and receipts that don't match what was spent." },
+      { "title": "Cash advances that never reconcile", "body": "Money handed to drivers, and every month-end turns into a reconciliation exercise." },
+      { "title": "Fuel is pricier — and still under review", "body": "Prices rose about EGP 3/L in March 2026, and the pricing committee reviews them every quarter." },
+      { "title": "No report, no e-invoice", "body": "No per-vehicle consumption data, and no e-invoice you can use with the Tax Authority." }
+    ],
+    "closing": "Every litre costs more now — and every litre that leaks costs more."
+  },
+  "how": {
+    "title": "How it works",
+    "steps": [
+      { "title": "We install an NFC chip", "body": "A chip on every vehicle, installed in a few days." },
+      { "title": "You set the limits", "body": "Per vehicle, driver, fuel type and day." },
+      { "title": "Drivers fuel cashless", "body": "At any partner station; the transaction appears instantly in your dashboard with an e-invoice." }
+    ],
+    "video": "Watch the 60-second video"
+  },
+  "calc": {
+    "title": "Calculate your savings",
+    "sub": "Enter your fleet numbers to see your spend and estimated yearly saving.",
+    "vehicles": "Number of vehicles",
+    "fuelType": "Fuel type",
+    "litres": "Average litres per vehicle per month",
+    "litresCng": "Average m³ per vehicle per month",
+    "price": "Price per litre (EGP)",
+    "priceCng": "Price per m³ (EGP)",
+    "priceNote": "{label} — editable",
+    "waste": "Estimated waste",
+    "wasteHint": "An estimate. Fleets typically lose 10–35% to unmonitored fuelling.",
+    "reference": "PetroApp clients in Egypt saved up to {pct}% — about {amount} a year for your fleet.",
+    "monthlySpend": "Monthly fuel spend",
+    "yearlySpend": "Yearly fuel spend",
+    "saving": "You could save around",
+    "perYear": "per year",
+    "cta": "Send me this report and book a demo",
+    "disclaimer": "Estimate only; results depend on how your fleet operates.",
+    "fuel": { "95": "Petrol 95", "92": "Petrol 92", "80": "Petrol 80", "diesel": "Diesel", "cng": "Natural gas" }
+  },
+  "features": {
+    "title": "Everything you need to manage fleet fuel",
+    "items": [
+      { "title": "Limits and controls per vehicle and driver", "body": "Set quantity, amount, fuel type, days and hours when fuelling is allowed." },
+      { "title": "Live dashboard and reports", "body": "Consumption, odometer and km/L for every vehicle and driver." },
+      { "title": "Certified e-invoices", "body": "Invoices aligned with the Egyptian Tax Authority e-invoicing system." },
+      { "title": "Wide station network", "body": "{stations}+ multi-brand stations across every governorate — not tied to one brand." },
+      { "title": "ERP integration", "body": "Connect directly to your accounting/ERP system and cut reconciliation time." },
+      { "title": "Driver app and 24/7 support", "body": "A map of the nearest partner stations and round-the-clock support." }
+    ]
+  },
+  "proof": {
+    "title": "Egyptian companies saving with PetroApp",
+    "readStory": "Read the story",
+    "close": "Close",
+    "logosTitle": "Trusted by",
+    "funding": "Saudi company backed by $50M in funding",
+    "cases": [
+      {
+        "company": "Target Egypt Group",
+        "metric": "Saved up to 20% of the fuel budget",
+        "detail": "13 branches",
+        "quote": "[TESTIMONIAL_QUOTE]",
+        "name": "[TESTIMONIAL_NAME]",
+        "role": "[TESTIMONIAL_TITLE]",
+        "story": "[CASE_STUDY_SUMMARY] — Target Egypt Group runs a fleet across about 13 branches and saved up to 20% of its fuel budget after controlling fuelling with NFC."
+      },
+      {
+        "company": "Cairo Airport Travel",
+        "metric": "15% saving after service costs",
+        "detail": "100+ vehicles",
+        "quote": "[TESTIMONIAL_QUOTE]",
+        "name": "[TESTIMONIAL_NAME]",
+        "role": "[TESTIMONIAL_TITLE]",
+        "story": "[CASE_STUDY_SUMMARY] — A fleet of 100+ vehicles with a net 15% saving even after including PetroApp service costs."
+      },
+      {
+        "company": "J&T Express Egypt",
+        "metric": "Costs cut by 20%",
+        "detail": "Logistics",
+        "quote": "[TESTIMONIAL_QUOTE]",
+        "name": "[TESTIMONIAL_NAME]",
+        "role": "[TESTIMONIAL_TITLE]",
+        "story": "[CASE_STUDY_SUMMARY] — The express courier cut fuel costs by 20% after moving to PetroApp."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "From EGP {price} per vehicle per month",
+    "body": "Start with one vehicle. The price drops as your fleet grows.",
+    "cta": "Get the price for your fleet"
+  },
+  "compare": {
+    "title": "Cash and coupons vs PetroApp",
+    "colOld": "Cash / coupons / single-brand card",
+    "colNew": "PetroApp",
+    "rows": [
+      { "label": "Control", "old": "No real spending limits", "new": "Limits per vehicle, driver and day" },
+      { "label": "Fraud", "old": "Fake receipts and cash leakage", "new": "NFC chip on the vehicle itself" },
+      { "label": "Reconciliation", "old": "Days of review every month", "new": "Live, ready-made reports" },
+      { "label": "E-invoice", "old": "Paper or none", "new": "Certified e-invoices" },
+      { "label": "Station choice", "old": "One brand", "new": "Multi-brand network" },
+      { "label": "Reports", "old": "Manual Excel", "new": "Consumption and km/L per vehicle" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "What is the minimum number of vehicles?", "a": "You can start with a single vehicle, and prices drop as your fleet grows." },
+      { "q": "Which stations, and how many?", "a": "{stations}+ multi-brand stations across every governorate in Egypt; the driver app shows the nearest partner station." },
+      { "q": "How does the NFC chip work — can drivers bypass it?", "a": "The chip is fitted at the vehicle's fuel inlet and fuelling only starts when the station nozzle reads it. It can't be used for another vehicle or beyond the limits you set." },
+      { "q": "What is the payment model?", "a": "[CONFIRM] Prepaid is available; postpaid options depend on fleet size and are agreed with sales." },
+      { "q": "How long does installation take, and what does it cost?", "a": "Installation takes about {days} working days, with a fixed per-vehicle installation fee [CONFIRM]." },
+      { "q": "Do you issue certified e-invoices?", "a": "Yes. Invoices are aligned with the Egyptian Tax Authority system, so VAT and costs remain deductible." },
+      { "q": "Can it integrate with our ERP?", "a": "Yes. APIs and report exports are available for common accounting and ERP systems." },
+      { "q": "How long is the contract?", "a": "[CONFIRM] Monthly and yearly plans are available." },
+      { "q": "How do you protect our data?", "a": "We comply with Egypt's Personal Data Protection Law No. 151 of 2020, and your data is only used for the purpose you provided it for." },
+      { "q": "What happens after I submit the form?", "a": "We'll call you within 15 minutes during working hours, understand your fleet's needs and send you a quote." }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to stop the waste?",
+    "sub": "Tell us about your fleet in under a minute and a PetroApp adviser will call you."
+  },
+  "footer": {
+    "privacy": "Privacy policy",
+    "rights": "All rights reserved",
+    "cr": "CR",
+    "tax": "Tax ID"
+  },
+  "sticky": { "calc": "Calculate savings", "whatsapp": "WhatsApp", "call": "Call" },
+  "exit": {
+    "title": "Before you go — get your fleet's savings estimate on WhatsApp",
+    "body": "Send us your vehicle count and we'll reply with a quick estimate.",
+    "cta": "Send on WhatsApp",
+    "close": "Close"
+  },
+  "consent": {
+    "text": "We use cookies to measure page and ad performance. You can accept or decline.",
+    "accept": "Accept",
+    "reject": "Decline",
+    "label": "Cookie settings"
+  },
+  "wa": {
+    "default": "Hello PetroApp, I'd like details and prices for fleet fuel management.",
+    "withFleet": "Hello PetroApp, I have a fleet of {fleet} vehicles and would like details and prices.",
+    "exit": "Hello PetroApp, I'd like a savings estimate for my fleet. Number of vehicles: ",
+    "thanks": "Hello PetroApp, I just submitted a request on the website and it's urgent. Request ID: {ref}"
+  },
+  "form": {
+    "title": "How many vehicles do you have?",
+    "subtitle": "Pick one and finish in under a minute",
+    "stepOf": "Step {step} of {total}",
+    "next": "Next",
+    "back": "Back",
+    "submit": "Book a free call",
+    "noCommitment": "No commitment",
+    "sending": "Sending…",
+    "networkError": "Connection problem. We saved your details and will retry — or chat with us on WhatsApp now.",
+    "rateLimited": "Too many attempts. Try again shortly or chat on WhatsApp.",
+    "genericError": "Something went wrong. Try again or chat on WhatsApp.",
+    "whatsappFallback": "Chat on WhatsApp",
+    "optional": "(optional)",
+    "labels": {
+      "fleet_size": "How many vehicles do you have?",
+      "vehicle_types": "Vehicle types",
+      "monthly_fuel_spend": "Approximate monthly fuel spend",
+      "current_method": "How do you pay for fuel today?",
+      "governorate": "Governorate",
+      "governoratePlaceholder": "Select governorate",
+      "company_name": "Company name",
+      "job_role": "Your role",
+      "industry": "Industry",
+      "industryPlaceholder": "Select industry",
+      "full_name": "Full name",
+      "mobile": "Mobile number",
+      "mobilePlaceholder": "01012345678",
+      "whatsapp_same": "This number is on WhatsApp",
+      "whatsapp_number": "WhatsApp number",
+      "email": "Email",
+      "emailHint": "(optional — so we can send you the quote)",
+      "preferred_contact": "How should we reach you?",
+      "consent_processing": "I consent to my data being processed to contact me about my request, per the",
+      "privacyLink": "privacy policy",
+      "consent_marketing": "I agree to receive offers and marketing messages from PetroApp (optional)"
+    },
+    "errors": {
+      "required": "This field is required",
+      "mobile_invalid": "Enter a valid Egyptian mobile number (e.g. 01012345678)",
+      "email_invalid": "Enter a valid email",
+      "name_min": "Enter your name (at least 2 characters)",
+      "company_min": "Enter the company name (at least 2 characters)",
+      "too_long": "Too long",
+      "invalid_chars": "Contains characters that aren't allowed",
+      "consent_required": "We need your consent to contact you"
+    }
+  },
+  "options": {
+    "fleet_size": { "1-4": "1–4", "5-19": "5–19", "20-49": "20–49", "50-99": "50–99", "100-249": "100–249", "250+": "250+" },
+    "vehicle_types": {
+      "sedan": "Cars/sedans",
+      "van": "Vans/microbuses",
+      "light_truck": "Light trucks",
+      "heavy_truck": "Heavy trucks",
+      "bus": "Buses",
+      "motorcycle": "Motorcycles"
+    },
+    "monthly_fuel_spend": { "lt50k": "Under 50k", "50k-200k": "50k–200k", "200k-1m": "200k–1M", "gt1m": "Over EGP 1M" },
+    "current_method": { "cash": "Cash/advances", "coupons": "Coupons", "single_brand_card": "Single-brand card", "other_system": "Another system" },
+    "job_role": {
+      "owner": "Owner/GM",
+      "fleet_manager": "Fleet/transport manager",
+      "finance": "Finance/accounting",
+      "procurement": "Procurement",
+      "operations": "Operations/logistics",
+      "other": "Other"
+    },
+    "industry": {
+      "logistics": "Logistics & shipping",
+      "fmcg": "FMCG/distribution",
+      "pharma": "Pharma",
+      "contracting": "Contracting",
+      "transport_tourism": "Transport & tourism",
+      "food_delivery": "Food delivery",
+      "other": "Other"
+    },
+    "preferred_contact": { "call": "Call", "whatsapp": "WhatsApp" },
+    "governorate": {
+      "cairo": "Cairo",
+      "giza": "Giza",
+      "alexandria": "Alexandria",
+      "qalyubia": "Qalyubia",
+      "sharqia": "Sharqia",
+      "dakahlia": "Dakahlia",
+      "gharbia": "Gharbia",
+      "monufia": "Monufia",
+      "beheira": "Beheira",
+      "kafr_el_sheikh": "Kafr El Sheikh",
+      "damietta": "Damietta",
+      "port_said": "Port Said",
+      "ismailia": "Ismailia",
+      "suez": "Suez",
+      "faiyum": "Faiyum",
+      "beni_suef": "Beni Suef",
+      "minya": "Minya",
+      "asyut": "Asyut",
+      "sohag": "Sohag",
+      "qena": "Qena",
+      "luxor": "Luxor",
+      "aswan": "Aswan",
+      "red_sea": "Red Sea",
+      "new_valley": "New Valley",
+      "matrouh": "Matrouh",
+      "north_sinai": "North Sinai",
+      "south_sinai": "South Sinai"
+    }
+  },
+  "thanks": {
+    "metaTitle": "Request received | PetroApp Egypt",
+    "title": "Great, {name}! We've received your request ✅",
+    "nextTitle": "What happens next",
+    "steps": [
+      "A PetroApp adviser will call you within {minutes} minutes (during working hours)",
+      "We'll understand your fleet's needs and send you a quote",
+      "Installation and go-live in {days} days"
+    ],
+    "whatsapp": "In a hurry? Chat with us on WhatsApp now",
+    "book": "Pick a time that suits you",
+    "calcTitle": "Your savings estimate",
+    "back": "Back to the home page",
+    "ref": "Request ID"
+  },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "body": "Go back to the home page or chat with us on WhatsApp.",
+    "home": "Home page"
+  }
+}
