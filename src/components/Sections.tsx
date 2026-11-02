@@ -39,28 +39,29 @@ export async function Hero({ locale, variant }: { locale: L; variant: string }) 
   const h1Key = variant === "B" ? "h1.B" : "h1.A";
   return (
     <section id="top" data-section="hero" className="bg-gradient-to-b from-brand-50 to-white">
-      <div className="container-x grid items-start gap-5 pb-10 pt-4 md:pt-10 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pb-16">
-        <div>
+      <div className="container-x pb-10 pt-4 md:pt-10 lg:pb-16">
+        <div className="max-w-4xl">
           <p className="inline-flex rounded-full bg-white px-3 py-1 text-sm font-semibold text-brand ring-1 ring-brand-100">
             {t("eyebrow", { stations: site.stats.stationsCount })}
           </p>
-          <h1 className="mt-3 text-[1.6rem] leading-snug sm:text-4xl lg:text-[2.75rem]" data-testid="hero-h1">
+          <h1 className="mt-3 text-[1.75rem] leading-snug sm:text-5xl sm:leading-tight lg:text-[3.5rem]" data-testid="hero-h1">
             {t(h1Key, { pct: site.claims.egyptSavingPct })}
           </h1>
-          <p className="mt-2 text-[0.95rem] text-muted sm:mt-3 sm:text-lg">{t("sub")}</p>
-
-          <div className="mt-5 hidden flex-wrap gap-3 lg:flex">
+          <p className="mt-2 text-base text-muted sm:mt-4 sm:text-xl lg:text-2xl lg:leading-relaxed">{t("sub")}</p>
+          <div className="mt-6 hidden flex-wrap gap-3 lg:flex">
             <ContactButtons locale={locale} wa={tw("default")} waLabel={t("whatsapp")} callLabel={t("call")} />
-          </div>
-          <div className="mt-8 hidden lg:block">
-            <DashboardMock locale={locale} />
           </div>
         </div>
 
-        <div className="lg:sticky lg:top-20">
-          <MultiStepForm intent="hero" variant={variant} primary />
-          <div className="mt-4 flex flex-wrap gap-3 lg:hidden">
-            <ContactButtons locale={locale} wa={tw("default")} waLabel={t("whatsapp")} callLabel={t("call")} />
+        <div className="mt-5 grid gap-6 lg:mt-10 lg:grid-cols-2 lg:items-stretch">
+          <div className="flex flex-col">
+            <MultiStepForm intent="hero" variant={variant} primary className="lg:flex-1" />
+            <div className="mt-4 flex flex-wrap gap-3 lg:hidden">
+              <ContactButtons locale={locale} wa={tw("default")} waLabel={t("whatsapp")} callLabel={t("call")} />
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <DashboardMock locale={locale} />
           </div>
         </div>
       </div>
@@ -110,7 +111,7 @@ async function DashboardMock({ locale }: { locale: L }) {
   const t = await getTranslations("hero.mock");
   const bars = [62, 48, 70, 55, 80, 44, 66];
   return (
-    <figure aria-hidden className="card overflow-hidden shadow-[var(--shadow-card)]">
+    <figure aria-hidden className="card flex h-full flex-col overflow-hidden shadow-[var(--shadow-card)]">
       <div className="flex items-center justify-between border-b border-line bg-surface px-4 py-2.5">
         <span className="font-bold">{t("title")}</span>
         <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-ok">

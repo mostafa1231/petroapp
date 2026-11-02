@@ -25,6 +25,7 @@ import { readAttribution, readCookie } from "@/lib/attribution";
 import { deviceType, gaClientId, readConsentState, track, uuid } from "@/lib/tracking";
 import { whatsappLink } from "@/lib/whatsapp";
 import { LAST_LEAD_KEY, QUEUE_KEY } from "@/lib/keys";
+import { CheckIcon } from "../Icons";
 import { ChipGroup } from "./ChipGroup";
 import { Turnstile } from "./Turnstile";
 
@@ -47,10 +48,12 @@ export function MultiStepForm({
   intent,
   variant,
   primary = false,
+  className = "",
 }: {
   intent: LeadIntent;
   variant: string;
   primary?: boolean;
+  className?: string;
 }) {
   const t = useTranslations("form");
   const tl = useTranslations("form.labels");
@@ -277,7 +280,7 @@ export function MultiStepForm({
     <div
       id={primary ? "lead-form" : undefined}
       data-lead-form
-      className="card w-full p-4 shadow-[var(--shadow-card)] sm:p-6"
+      className={`card flex w-full flex-col p-4 shadow-[var(--shadow-card)] sm:p-6 ${className}`}
       onFocusCapture={markStarted}
     >
       <form noValidate onSubmit={handleSubmit(onSubmit, reportErrors)} aria-describedby={`${uid}-progress`}>
@@ -640,6 +643,16 @@ export function MultiStepForm({
           </div>
         )}
       </form>
+      {step < 2 && (
+        <ul className="mt-auto hidden flex-wrap gap-x-5 gap-y-2 border-t border-line pt-4 text-sm text-muted lg:flex">
+          {(t.raw("assurances") as string[]).map((a) => (
+            <li key={a} className="flex items-center gap-1.5">
+              <CheckIcon className="size-4 text-ok" />
+              {a}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

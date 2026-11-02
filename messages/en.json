@@ -339,7 +339,12 @@
       "title": "Thanks for your interest 🙏",
       "body": "PetroApp Egypt is currently available for companies and fleets only. If you represent a company, go back and choose “Company”.",
       "back": "Go back and change answer"
-    }
+    },
+    "assurances": [
+      "No commitment",
+      "We call within 15 minutes",
+      "Start with one vehicle"
+    ]
   },
   "options": {
     "fleet_size": {
